@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Taggability
+		meta(name="description" content="Taggability helps you tag all your Readability bookmarks in just a few clicks.")
+		script(type="text/javascript", src="js/jquery.min.js")
+		script(type="text/javascript", src="js/lib.js")
+		script(type="text/javascript", src="js/script.js")
+		script(type="text/javascript", src="//use.typekit.net/moa1vmt.js")
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		script(type="text/javascript", src="js/jquery.tagsinput.min.js")
+		link(rel="stylesheet", type="text/css", href="css/style.css")
+
+	body
+		header
+			div.container
+				a(href="/").site_title Taggability 
+					span.version alpha
+				-if(user){
+					span.push_right Logged in as 
+						b #{user.username}. 
+						a(href="/logout") Logout			
+				-} else {
+					span.push_right Not logged in. 
+				-}
+				//- span.push_right.entypo &#128100;
+		div.content
+			block content
+		//- footer
+		//- 	div.container
+		//- 		p Lorem ipsum

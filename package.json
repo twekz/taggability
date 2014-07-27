@@ -1,0 +1,22 @@
+{
+	"name": "taggability",
+	"version": "0.1.0",
+	"description": "An app to tag multiple Readability bookmarks",
+	"author": "Samuel Lemaresquier <hello@taggability.io> (http://twitter.com/twekz",
+	"dependencies": {
+		"express": "3.14.0",
+		"passport": "0.1.x",
+		"passport-readability": ">=0.0.x",
+		"util": ">=0.10.x",
+		"connect-flash": ">=0.1.1",
+		"jade": ">=1.0.1",
+		"request": "2.x",
+		"underscore": "1.x",
+		"node-readability-api": "git://github.com/twekz/node-readability-api.git"
+	},
+	"scripts": {
+		"start": "node app.js"		
+	},
+	"private": true,
+	"license": "MIT"
+}

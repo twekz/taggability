@@ -1,0 +1,13 @@
+extend layout
+
+append content
+	div.content_wrapper
+		br
+		br
+		-if(user){
+		p You are already logged in, <b>#{user.username}</b> - 
+			a(href="/logout") Logout
+		-} else {
+		a(href="/auth/readability").btn.btn-primary Login with Readability
+		-}
+		

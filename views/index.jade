@@ -1,0 +1,32 @@
+extend layout
+
+append content
+	div.content_wrapper
+		h1 Welcome
+		br
+		if !user
+			p To use Taggability, please log in with Readability: 
+			p: a(href="/auth/readability").btn.btn-primary Login with Readability
+
+		else
+			h2 Your bookmarks 
+				span#totalBookmarksNumber 
+			p.help Here, you can edit all your Readability bookmarks.
+			p: a(href="all").btn.btn-primary All bookmarks
+			br
+
+			if tags
+				h2 Your tags (#{tags.length})
+				p.help Delete tags by clicking on them or create new ones.
+				//- if info
+				//- 	p(style="color:orange")= info
+				//- ul
+				//- 	each tag in tags
+				//- 		//- li= tag.text
+						li: a(href="/tags/#{tag.id}/delete").tag #{tag.text}
+				p
+				each tag in tags
+					a(href="/tags/#{tag.id}/delete").tag #{tag.text}
+				br
+				br
+				//- p: a(href="#").btn.btn-primary Create a new tag

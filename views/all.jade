@@ -1,0 +1,39 @@
+extend layout
+
+append content
+	div.content_wrapper
+		//- h1 All Bookmarks
+		//- span#loadBookmarks
+		ul#bookmarksList
+
+	div.sidebar_wrapper
+		div.sidebar_content.align-center
+			p#alertSidebar.alert
+			br
+			p: b
+				span#selectedBookmarks No bookmark 
+				span  selected.
+			p
+				a(href="#")#checkAll
+					span.text Select All
+				|  |  
+				a(href="#")#uncheckAll
+					span.text Unselect All
+			div.separator.medium
+			p
+				a(href="")#clearTagsInput 
+					//- span.entypo &#128683; 
+					span Clear tags box
+			input(type="text")#inputTags
+			p
+				a(href="#")#changeTags.btn.btn-green
+					span.entypo &#10133; 
+					span.text Add these tags to selection
+				a(href="#")#clearTags.btn.btn-red
+					span.entypo &#59177; 
+					span.text Delete all tags from selection
+			br
+			//- p: a(href="#")#refresh.btn Refresh selectionnn
+
+	script(type='text/javascript').
+		loadBookmarksPage(1);

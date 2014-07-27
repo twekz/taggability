@@ -1,0 +1,24 @@
+each item in bookmarks
+	li(id="#{item.id}").bookmarkBox
+		input(type="checkbox", name="article", style="display:none", value="#{item.id}", id="bookmark-#{item.id}")
+		label(for="bookmark-#{item.id}")
+			div.bookmark-content
+				if item.favorite
+					span.entypo &#9733; 
+				if item.archive
+					span.entypo &#128230; 
+				span.bookmark-title #{item.article.title} 
+				span.bookmark-domain #{item.article.domain}
+				if (item.tags.length > 0)
+				div.bookmark-tags
+					each tag in item.tags
+						span.tag #{tag.text}
+
+			div.bookmark-buttons
+				a.btn.btn-small(href="#{item.article.url}",target="_blank") View article
+
+li.actions
+	if next_page
+		span: a(href="#" data-value="#{next_page}").loadMoreButton Load More
+	else
+		span.info No more bookmarks to load

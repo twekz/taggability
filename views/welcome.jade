@@ -1,0 +1,148 @@
+extend layout
+
+append content
+	div.content_wrapper.hero_wrapper
+		div.hero_title Keep your Readability organized.
+		div.hero_text
+			p <b>Taggability</b> helps you tag all your <a href="http://www.readability.com" class="hero_link">Readability</a> bookmarks in just a few clicks.
+			br
+			a(href="/auth/readability").btn.btn-inverse.big-btn
+				span.entypo &#59200; 
+				span.text Login with Readability
+		p
+			a.btn.btn-twitter(href="https://twitter.com/home?status=If%20you're%20a%20@readability%20user,%20you%20might%20find%20www.taggability.io%20(by%20@twekz)%20useful!", target="_blank")
+				span.entypo-social &#62217; 
+				span.text Tweet this
+			a.btn.btn-facebook(href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftaggability.io", target="_blank")
+				span.entypo-social &#62220; 
+				span.text Share this
+			a.btn(href="https://github.com/twekz/taggability")
+				span.entypo-social &#62208; 
+				span.text Github
+			a.btn.btn-red(href="mailto:hello@taggability.com", target="_blank")
+				span.entypo &#59168; 
+				span.text Contact me
+	div.page_wrapper
+		h1.red Taggability
+		p.red Taggability is a <b>free tool</b> that allows you to assign <b>multiple tags</b> to <b>multiple articles</b> from your <i>Readability</i> reading list. It helps you maintain a clean and organized article collection.
+		p
+			b Warning: 
+			| Taggability is still a work-in-progress and can still have bugs. It is provided as is, without any warranty. However, it works and it shouldn't mess up your library ;)
+		p.red 
+			b I hope it can help, and that you'll enjoy using it!
+
+		div.separator
+
+		h2 How it works
+		p All you need is a 
+			a(href="http://readability.com") Readability
+			|  account to log in, and articles in your reading list.
+
+		div.row
+			div.col-3
+				div.home_screenshot
+					img(src="img/1-select.png")
+					p
+						//- span.entypo &#10003; 
+						<b>1. Select</b> articles from your list by clicking them.
+
+			div.col-3
+				div.home_screenshot
+					img(src="img/2-input.png")
+					p
+						//- span.entypo &#59148; 
+						<b>2. Enter</b> the tags you want to add.
+			
+			div.col-3
+				div.home_screenshot
+					img(src="img/3-button.png")
+					p
+						//- span.entypo &#59273; 
+						<b>3. Click</b> the 'Add tags' button.
+		//- p Done.
+		div.separator
+
+		h2 About
+		p Hi, I'm <a href="http://twitter.com/twekz">Sam</a>, a web designer &amp; front-end developer from Paris, France.
+		p I'm an intense user of <i>Readability</i>, where I like to keep important articles to refer to someday. After a couple of years using the (great) service, I had more than 1,500 articles in my reading list. <b>None of them was tagged.</b> 
+		p Manually editing all those bookmarks with the <a href="http://readability.com/reading-list" target="_blank">regular interface</a>  wasn't an option, so I decided to create a tool that would help me do that.
+		br 
+		p This was also an excuse to create an app as a side project and play with a coding language that was to me.
+		
+		div.separator
+
+		h2 
+			| Make it better
+		p You are strongly encouraged to help me make Taggability better! See how you can contribute below - no money involved!
+
+		ul
+			b
+				li Suggest something &amp; report a bug by 
+					a(href="mailto:hello@taggability.com", target="_blank") email 
+					| or on 
+					a(href="http://twitter.com/twekz") Twitter
+					| .
+				li Dig into the code on 
+					a(href="https://github.com/twekz/taggability") Github
+					| .
+				li Share the love!
+
+		p
+			a.btn.btn-twitter(href="https://twitter.com/home?status=If%20you're%20a%20@readability%20user,%20you%20might%20find%20www.taggability.io%20(by%20@twekz)%20useful!", target="_blank")
+				span.entypo-social &#62217; 
+				span.text Tweet this
+			a.btn.btn-facebook(href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftaggability.io", target="_blank")
+				span.entypo-social &#62220; 
+				span.text Share this
+			a.btn(href="https://github.com/twekz/taggability")
+				span.entypo-social &#62208; 
+				span.text Github
+			a.btn.btn-red(href="mailto:hello@taggability.com", target="_blank")
+				span.entypo &#59168; 
+				span.text Contact me
+
+		br
+
+			
+		div.separator
+
+		h2 Credits
+		p Fonts by 
+			a(href="http://typekit.com", target="_blank") Typekit
+			|  &amp; icons by 
+			a(href="http://entypo.com", target="_blank") Entypo
+			| . Taggability is built on 
+			a(href="http://nodejs.org/", target="_blank") Node.js
+			|  using the following open-source resources:
+		ul
+			li
+				a(href="https://github.com/jaredhanson/passport-readability", target="_blank") passport-readability
+				|  by 
+				b Jared Hanson
+			li
+				a(href="https://github.com/robinjmurphy/node-readability-api", target="_blank") node-readability-client
+				|  (edited) by 
+				b Robin Murphy
+			li
+				a(href="https://github.com/xoxco/jQuery-Tags-Input", target="_blank") jQuery-Tags-Input
+				|  by 
+				b XOXCO
+		p And, of course, the 
+			a(href="https://www.readability.com/developers/api", target="_blank") Readability Reader API
+			| .
+		br
+		p 
+			b Thank you 
+			span.entypo &hearts;
+			a(href="https://github.com/aout", target="_blank") Guillaume C.
+			|  &amp; 
+			a(href="https://github.com/gcasalis", target="_blank") Guillaume C.
+			|  for your precious advice!
+
+		div.separator
+
+		h2#license License
+		p This project is published under the MIT License (MIT). 
+		p 2014 – Created by Samuel Lemaresquier.
+		br
+		br
