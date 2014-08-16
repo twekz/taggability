@@ -1,4 +1,4 @@
-/* import _normalize */
+/* _normalize */
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 article,
 aside,
@@ -166,8 +166,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* import _mixins */
-/* import _variables */
+/* _mixins */
+/* _variables */
 /* start of style.less */
 body {
   background-color: white;
@@ -283,7 +283,7 @@ footer {
   width: 30%;
   min-width: 21em;
   z-index: 8;
-  padding: 3em 2em 3em;
+  padding: 3.5em 2em 3.5em;
   background-color: #eeeeee;
 }
 .sidebar_wrapper:before,
@@ -322,7 +322,7 @@ footer {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
-  padding: 3em 2em 3em;
+  padding: 3.5em 2em 3.5em;
   z-index: 6;
   width: 70%;
 }
@@ -752,6 +752,14 @@ img {
   background-color: #333333;
   color: #ffffff;
   border-radius: 4px;
+}
+.avatar {
+  max-width: 1.75em;
+  display: inline;
+  vertical-align: middle;
+  margin: -0.25em 0.25em;
+  border-radius: 50%;
+  border: 2px solid #333333;
 }
 @font-face {
   font-family: "Entypo";

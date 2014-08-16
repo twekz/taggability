@@ -18,9 +18,11 @@ html(lang="en")
 				a(href="/").site_title Taggability 
 					span.version alpha
 				-if(user){
-					span.push_right Logged in as 
-						b #{user.username}. 
-						a(href="/logout") Logout			
+					span.push_right
+						img(src="#{user._json.avatar_url}").avatar
+						b #{user.username}
+						| &nbsp;&nbsp;
+						a(href="/logout").btn.btn-small.btn-red Logout		
 				-} else {
 					span.push_right Not logged in. 
 				-}
