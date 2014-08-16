@@ -5,7 +5,7 @@
 	"author": "Samuel Lemaresquier <hello@taggability.io> (http://twitter.com/twekz)",
 	"dependencies": {
 		"express": "4.x",
-		"passport": "0.1.x",
+		"passport": "latest",
 		"passport-readability": ">=0.0.x",
 		"morgan": "latest",
 		"cookie-parser": "latest",
