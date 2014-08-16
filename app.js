@@ -20,7 +20,11 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 app.use(cookieParser());
 app.use(bodyParser.json());
-app.use(session({ secret: 'keyboard cat' }));
+app.use(session({
+	resave: true,
+	saveUninitialized: true,
+	secret: 'keyboard cat'
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
