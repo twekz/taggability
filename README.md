@@ -14,23 +14,10 @@ Check out [taggability.io][1] to see it in action. All you need is a Readability
 
 
 
-About
------
-
-I'm [Sam][13], a web designer & front-end developer from Paris, France.
-
-I'm an intense user of Readability, where I like to keep important articles to refer to someday.
-
-After a couple of years using the (great) service, I had more than 1,500 articles in my reading list. None of them was tagged. Manually editing all those bookmarks with the regular Readability interface wasn't an option, so I decided to create a tool that would help me do that.
-
-This was also an excuse to create an app as a side project and play with Node.js.
-
-
-
 Install
 -------
 
-You need [Node.js][11] and [npm][12] installed.
+You need [Node.js][11] installed. Clone/Download this repository. Open your console and go to the directory.
 
 **Install with:**
 
@@ -66,21 +53,33 @@ Once the server is running, go to `http://localhost:3000`.
 
 
 
-Contribute
-----------
-
-You are strongly encouraged to make Taggability better. Dig into the code, report a bug, suggest something, share the love... Contact me on [Twitter][13] or by email at hello@taggability.io!
-
-
-
 To Do (already planned)
 -----------------------
 
-- Update node-modules to recent versions (especially express & passport).
 - Refactor app.js to separate routes, server, etc.
 - Add auto-loading pagination for bookmarks.
 - Display notifications for user actions (success/failure).
 - Responsive layout for tablets.
+
+
+
+About
+-----
+
+I'm [Sam][13], a web designer & front-end developer from Paris, France.
+
+I'm an intense user of Readability, where I like to keep important articles to refer to someday.
+
+After a couple of years using the (great) service, I had more than 1,500 articles in my reading list. None of them was tagged. Manually editing all those bookmarks with the regular Readability interface wasn't an option, so I decided to create a tool that would help me do that.
+
+This was also an excuse to create an app as a side project and play with Node.js.
+
+
+
+Contribute
+----------
+
+You are strongly encouraged to make Taggability better. Dig into the code, report a bug, suggest something, share the love... Contact me on [Twitter][13] or by email at hello@taggability.io!
 
 
 

@@ -1,12 +1,13 @@
-var express = require('express'),
-	passport = require('passport'),
-	util = require('util'), 
-	flash = require('connect-flash'),
-	path = require('path'),
-	jade = require('jade'),
-	readability = require('readability-api'),
-	fs = require('fs'),
-	ReadabilityStrategy = require('passport-readability').Strategy;
+var express = require('express');
+var	passport = require('passport');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var session = require('express-session');
+var	jade = require('jade');
+var	readability = require('readability-api');
+var	fs = require('fs');
+var	ReadabilityStrategy = require('passport-readability').Strategy;
 
 var app = express();
 
@@ -14,26 +15,16 @@ var app = express();
 // Configure Express
 // =================
 
-app.configure(function() {
-	app.set('port', process.env.PORT || 3000);
-	app.set('view engine', 'jade');
-	// app.set('view options', { layout: true });
-	app.set('views', __dirname + '/views');
-	app.use(express.cookieParser());
-	app.use(express.bodyParser());
-	app.use(express.methodOverride());
-	app.use(express.session({ secret: 'keyboard cat' }));
-	// Initialize Passport!  Also use passport.session() middleware, to support
-	// persistent login sessions (recommended).
-	app.use(passport.initialize());
-	app.use(passport.session());
-	app.use(flash());
-	// app.use('/public', express.static(__dirname + '/public'));
-	// app.use('/bookmarks/page/', express.static(__dirname + '/public'));
-	app.use(express.logger('dev'));
-	app.use(app.router);
-	app.use(express.static(__dirname + '/public'));
-});
+app.set('port', process.env.PORT || 3000);
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/views');
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(session({ secret: 'keyboard cat' }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.static(__dirname + '/public'));
+app.use(logger('dev'));
 
 
 // Configure keys & callback URL
@@ -227,8 +218,7 @@ app.get('/bookmarks/page/:pagenb', ensureAuthenticated, function(req, res){
 			current_page: current_page,
 			total_pages: total_pages,
 			prev_page: prev_page,
-			next_page: next_page,
-			info: req.flash('info')
+			next_page: next_page
 		});
 		  // res.end();
 		}
@@ -256,7 +246,6 @@ app.get('/tags/:tagid/delete', ensureAuthenticated, function(req,res){
 			} else {
 				console.log('API success - tag deleted.');
 				console.log(body);
-				req.flash('info', 'Successfully deleted tag (user level).');
 				res.redirect('/');
 				// res.end(JSON.stringify({error: null, tags: req.params.tagid}));
 			}
@@ -300,8 +289,7 @@ app.get('/', function(req, res){
 		// 	} else {
 		// 		res.render('index', {
 		// 			user: req.user,
-		// 			tags: tags,
-		// 			info: req.flash('info')
+		// 			tags: tags
 		// 		});
 		// 	}
 		// });
@@ -367,8 +355,7 @@ app.get('/api/ajax/bookmarks/page/:page', ensureAuthenticated, function(req, res
 				current_page: current_page,
 				total_pages: total_pages,
 				prev_page: prev_page,
-				next_page: next_page,
-				info: req.flash('info')
+				next_page: next_page
 			})
 			}
 		})
@@ -563,12 +550,10 @@ app.get('/api/bookmarks/:id/tags/:tagid/delete', ensureAuthenticated, function(r
 		reader.removeTag(req.params.id, req.params.tagid, function(err, done){
 			if(err){
 				console.log('Error deleting tag: ' + err);
-				req.flash('info', 'Error: could not delete tag.');
 				res.redirect('/bookmarks');
 		// res.end();
 	} else {
 		console.log('deleted tag');
-		req.flash('info', 'Successfully deleted tag.');
 		res.redirect('/bookmarks');
 		// res.end();
 	}
