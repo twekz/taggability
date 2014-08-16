@@ -749,8 +749,8 @@ img {
   font-family: "Helvetica", sans-serif;
   font-size: 0.6em;
   padding: 0.3em 0.5em;
-  background-color: #333333;
-  color: #ffffff;
+  background-color: #eeeeee;
+  color: #333333;
   border-radius: 4px;
 }
 .avatar {
