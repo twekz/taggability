@@ -20,7 +20,11 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 app.use(cookieParser());
 app.use(bodyParser.json());
-app.use(session({ secret: 'keyboard cat' }));
+app.use(session({
+	resave: true,
+	saveUninitialized: true,
+	secret: 'keyboard cat'
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
@@ -144,16 +148,8 @@ var createReader = function(token, tokenSecret){
 
 
 
-// app.get('/account', ensureAuthenticated, function(req, res){
-//   res.render('account', { user: req.user });
-// });
 
-app.get('/login', function(req, res){
-	res.render('login', {
-	// scripts: ['jquery.min.js', 'script.js'],
-	user: req.user
-});
-});
+
 app.get('/logout', function(req, res){
 	req.logout();
 	res.redirect('/');
@@ -589,9 +585,6 @@ app.get('/auth/readability/callback',
 		res.redirect('/');
 	});
 
-app.get('/foo/bar', function(req, res){
-	res.render()
-})
 
 
 
